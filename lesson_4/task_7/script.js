@@ -8,12 +8,12 @@ for(let i = start; i <= end; i++){
 		console.log('Found');
 
 		sum += i;
-
-		if(sum * 5 > 5000){
-			console.log('Bigger');
-		}
-		else{
-			console.log('Small or equal');
-		}
 	}
+}
+
+if(sum * 5 > 5000){
+	console.log('Bigger');
+}
+else{
+	console.log('Small or equal');
 }
