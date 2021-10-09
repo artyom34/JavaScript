@@ -6,16 +6,10 @@ const withdraw = (clients, balances, client, amount) => {
     //put your code here
 	let indexClient = clients.indexOf(client);
 
-		if(balances.indexOf(indexClient)){
-
-			if(balances[indexClient] < amount){
-				return -1;
-			}
-
-			let accountBalance = balances[indexClient] - amount;
-
-			return accountBalance;
+		if(balances[indexClient] < amount){
+			return -1;
 		}
+		return balances[indexClient] -=amount;
 }
 //example 1:
 
