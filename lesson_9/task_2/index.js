@@ -1,7 +1,10 @@
 'use strict';	
 
 function getKeys(obj){
-	return console.log(Object.keys(obj));
+	let arrayKeys = Object.keys(obj);
+	for(let i = 0; i < arrayKeys.length; i++){
+		console.log(arrayKeys[i]);
+	}
 }
 
 
