@@ -1,39 +1,16 @@
 'use strict';
 
-function compareObjects(obj1, obj2) {
-// put your code here	
-	const objData1 = Object.entries(obj1).flat(Infinity);
-	const objData2 = Object.entries(obj2).flat(Infinity);
-
-	
-
-	return true;
-}
+const multiRound = num => {
+	// put your code here
+	return [
+		Math.floor(num * 100) / 100,
+		Math.trunc(num * 100) / 100,
+		Math.ceil(num * 100) / 100, 
+		Math.round(num * 100) / 100,
+		+num.toFixed(2)
+	];
+};
 
 // examples
-const obj1 = {
-name: 'Tom',
-age: 17,
-};
-
-const obj2 = {
-name: 'Bob',
-age: 17,
-};
-
-const obj3 = {
-name: 'Bob',
-age: 17,
-student: false,
-};
-
-const obj4 = {
-name: 'Tom',
-age: 17,
-};
-
-// console.log(compareObjects(obj1, obj2)); // ==> false
-// compareObjects(obj2, obj3); // ==> false
-// console.log(compareObjects(obj1, obj4)); // ==> true
-
-console.log(compareObjects(obj1, obj2));
+console.log(multiRound(11.12556)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+console.log(multiRound(6.112)); // ==> [6.11, 6.11, 6.12, 6.11, 6.11]
