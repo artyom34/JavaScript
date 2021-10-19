@@ -1,39 +1,21 @@
 'use strict';
 
-function compareObjects(obj1, obj2) {
-// put your code here	
-	const objData1 = Object.entries(obj1).flat(Infinity);
-	const objData2 = Object.entries(obj2).flat(Infinity);
+const getRandomNumbers = (length, from, to) => {
+	// put your code here
+	let numbers = [];
 
-	
-
-	return true;
-}
+	if(length > 0){
+		for(let i = 0; i < length; i++){
+			numbers[i] = Number.parseInt(Math.random() * (to - from) + from);
+		} 
+		return numbers;
+	}
+	else{
+		return null
+	}
+};
 
 // examples
-const obj1 = {
-name: 'Tom',
-age: 17,
-};
-
-const obj2 = {
-name: 'Bob',
-age: 17,
-};
-
-const obj3 = {
-name: 'Bob',
-age: 17,
-student: false,
-};
-
-const obj4 = {
-name: 'Tom',
-age: 17,
-};
-
-// console.log(compareObjects(obj1, obj2)); // ==> false
-// compareObjects(obj2, obj3); // ==> false
-// console.log(compareObjects(obj1, obj4)); // ==> true
-
-console.log(compareObjects(obj1, obj2));
+console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
+getRandomNumbers(5, 1.4, 3.22); // ==> [3, 2, 2, 2, 2]
+getRandomNumbers(5, 1.4, 3.22); // ==> [3, 3, 2, 3, 2]

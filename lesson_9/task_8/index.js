@@ -2,11 +2,18 @@
 
 function compareObjects(obj1, obj2) {
 // put your code here	
-	const objData1 = Object.entries(obj1).flat(Infinity);
-	const objData2 = Object.entries(obj2).flat(Infinity);
 
-	
+	let	valuesArray1 = Object.entries(obj1).flat();
+	let valuesArray2 = Object.entries(obj2).flat();
 
+	if(valuesArray1.length != valuesArray2.length){
+		return false
+	}
+	for(let i = 0; i < valuesArray1.length; i++){
+		if(valuesArray1[i] !== valuesArray2[i]){
+			return false;
+		}
+	}
 	return true;
 }
 
@@ -36,4 +43,4 @@ age: 17,
 // compareObjects(obj2, obj3); // ==> false
 // console.log(compareObjects(obj1, obj4)); // ==> true
 
-console.log(compareObjects(obj1, obj2));
+console.log(compareObjects(obj2, obj4));
