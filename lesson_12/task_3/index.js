@@ -1,7 +1,7 @@
 'use strict';
 const array = [' 12.2 ', '1 sada', '13 '];
 
-function cleanTransactionsList(array){
+export function cleanTransactionsList(array){
 	let arrayNumber = [];
 	let count = 0;
 
@@ -17,4 +17,3 @@ function cleanTransactionsList(array){
 }
 
 console.log(cleanTransactionsList(array));
-console.log(array);

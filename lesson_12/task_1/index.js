@@ -1,6 +1,6 @@
 'use strict';
 
-function calc(expression){
+export const calc = expression =>{
 
 	let result = 0;
 	let [firstNumber, opertor, secondNumber] = 

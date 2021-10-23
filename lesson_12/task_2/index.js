@@ -1,6 +1,6 @@
 'use strict';
 
-function reverseString(string){
+export function reverseString(string){
 	
 	if(typeof string !== 'string'){
 		return null;
