@@ -28,8 +28,5 @@ export function createCalculator(){
 	};
 }
 
-createCalculator().add(10);
-
-console.log(createCalculator().number);
 
 
