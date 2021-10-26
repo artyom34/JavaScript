@@ -1,23 +1,21 @@
-let sender = 'Gromcode';
 
-const createMessage = () =>{
+	export default function createMessenger(){
 	
 	let message = 'Just learn it';
-	
+	let sender = 'Gromcode';
 
 	function sendMessage(name){
-		console.log(name + ', ' + message + '! Your ' + sender);
+		console.log(`${name}, ${message}! Your ${sender}`);
 	}
 
 	function setMessage(text){
 		message = text;
 	}
 
-	function setSender(text){
-		sender.bold(text);
+	function setSender(nameAutor){
+		sender = nameAutor;
 	}
 
-	
 	return {
 		sendMessage,
 		setMessage,
@@ -25,10 +23,8 @@ const createMessage = () =>{
 	};
 }
 
-const getMessage = createMessage();
-
-getMessage.setSender(sender);
-getMessage.setMessage('Good job');
-getMessage.sendMessage('Bob');
+createMessenger().setSender('Hi');
+createMessenger().setMessage('Good job');
+createMessenger().sendMessage('Bob');
 
 
