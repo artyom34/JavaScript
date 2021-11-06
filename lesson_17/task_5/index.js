@@ -1,5 +1,5 @@
 
-export const timer = {
+ const timer = {
 	secondsPassed: 0,
 	minsPassed: 0,
 	intervalid: 0,
@@ -32,6 +32,7 @@ export const timer = {
 		this.minsPassed = 0;
 	}
 }
+timer.startTimer();
 
 
 
