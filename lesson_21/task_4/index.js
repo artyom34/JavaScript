@@ -23,7 +23,3 @@ export function getGoal(){
 
 	return elementGoal;
 }
-
-const content = getGoal();
-
-console.log(content);
