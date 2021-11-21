@@ -6,11 +6,11 @@ export function getTitleElement(){
 	return console.dir(titleElem);
 }
 
-export function getImputElement(){
+export function getInputElement(){
 	const inputElem = document.querySelector('input').type = 'text';
 
 	return console.dir(inputElem);	
 }
 
 getTitleElement();
-getImputElement();
+getInputElement();
