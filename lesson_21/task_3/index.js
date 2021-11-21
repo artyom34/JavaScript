@@ -1,16 +1,15 @@
 'use strict';
 
-export function getItemsList(){
+ function getItemsList(){
 	const elementsList = document.querySelectorAll('.technology');
 	console.dir(elementsList);
 	return elementsList;
 }
 
-export function getItemsArray(){
-	const elementsArray = document.querySelectorAll('.tool');
+ function getItemsArray(){
+	const elementsArray = Array.from(document.querySelectorAll('.tool'));
 	
-	Array.from(elementsArray);
-	console.dir(elementsArray);
+console.dir(elementsArray);
 
 	return elementsArray;	
 }
