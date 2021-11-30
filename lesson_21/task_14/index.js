@@ -28,6 +28,14 @@ elemDiv.addEventListener('click', logGreyDiv, true);
 elemP.addEventListener('click', logGreyP, true);
 elemSpan.addEventListener('click', logGreySpan, true);
 
+elemDiv.removeEventListener('click', logGreenDiv);
+elemP.removeEventListener('click', logGreenP);
+elemSpan.removeEventListener('click', logGreenSpan);
+
+elemDiv.removeEventListener('click', logGreyDiv, true);
+elemP.removeEventListener('click', logGreyP, true);
+elemSpan.removeEventListener('click', logGreySpan, true);
+
 const clearBtn = document.querySelector('.clear-btn');
 
 clearBtn.addEventListener('click', () => {
