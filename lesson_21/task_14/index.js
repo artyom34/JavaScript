@@ -1,7 +1,6 @@
 'use strict';
 const eventsList = document.querySelector('.events-list');
 
-const rect = document.querySelector('.rect');
 const elemDiv  = document.querySelector('.rect_div');
 const elemP = document.querySelector('.rect_p');
 const elemSpan = document.querySelector('.rect_span');
@@ -19,29 +18,32 @@ const logGreenP = elemTarget.bind(null, 'P', 'green');
 const logGreenSpan = elemTarget.bind(null, 'SPAN', 'green');
 
 
-
-elemDiv.addEventListener('click', logGreenDiv);
-elemP.addEventListener('click', logGreenP);
-elemSpan.addEventListener('click', logGreenSpan);
-
-elemDiv.addEventListener('click', logGreyDiv, true);
-elemP.addEventListener('click', logGreyP, true);
-elemSpan.addEventListener('click', logGreySpan, true);
-
-elemDiv.removeEventListener('click', logGreenDiv);
-elemP.removeEventListener('click', logGreenP);
-elemSpan.removeEventListener('click', logGreenSpan);
-
-elemDiv.removeEventListener('click', logGreyDiv, true);
-elemP.removeEventListener('click', logGreyP, true);
-elemSpan.removeEventListener('click', logGreySpan, true);
-
 const clearBtn = document.querySelector('.clear-btn');
+const removeEvents = document.querySelector('.remove-handlers-btn');
+const attachEvents = document.querySelector('.attach-handlers-btn');
+
+attachEvents.addEventListener('click', logGreenDiv);
+attachEvents.addEventListener('click', logGreyDiv, true);
+
+attachEvents.addEventListener('click', logGreenP);
+attachEvents.addEventListener('click', logGreyP, true);
+
+attachEvents.addEventListener('click', logGreenSpan);
+attachEvents.addEventListener('click', logGreySpan, true);
+
+
+removeEvents.removeEventListener('click', logGreenDiv);
+removeEvents.removeEventListener('click', logGreyDiv, true);
+
+removeEvents.removeEventListener('click', logGreenP);
+removeEvents.removeEventListener('click', logGreyP, true);
+
+removeEvents.removeEventListener('click', logGreenSpan);
+removeEvents.removeEventListener('click', logGreySpan, true);
 
 clearBtn.addEventListener('click', () => {
 	eventsList.innerHTML = '';
 });
-
 
 
 
