@@ -30,12 +30,8 @@ function attachEvents(){
 	elemSpan.addEventListener('click', logGreenSpan);
 	elemSpan.addEventListener('click', logGreySpan, true);
 }
-
+document.addEventListener('DOMContentLoaded', attachEvents);
 attachHandlers.addEventListener('click', attachEvents);
-
-document.addEventListener('DOMContentLoaded', () =>{
-	attachEvents();
-});
 
 removeHandlers.addEventListener('click', () => {
 	elemDiv.removeEventListener('click', logGreyDiv, true);
