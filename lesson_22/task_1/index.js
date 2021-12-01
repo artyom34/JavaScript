@@ -5,6 +5,7 @@ const removeEvents = document.querySelector('.remove-handlers-btn');
 const attachEvents = document.querySelector('.attach-handlers-btn');
 
 
+
 const elemDiv  = document.querySelector('.rect_div');
 const elemP = document.querySelector('.rect_p');
 const elemSpan = document.querySelector('.rect_span');
@@ -12,6 +13,10 @@ const elemSpan = document.querySelector('.rect_span');
 function elemTarget(text, color){
 	eventsList.innerHTML += `<span style="color: ${color}; margin-left: 8px">${text}</span>`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	elemTarget();
+});
 
 const logGreyDiv = elemTarget.bind(null, 'DIV', 'grey');
 const logGreyP = elemTarget.bind(null, 'P', 'grey');
