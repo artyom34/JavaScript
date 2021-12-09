@@ -19,7 +19,6 @@ for(let secEl = 1; secEl <= 3; secEl++){
 			sectorSeatElement.classList.add('sector__seat');
 			sectorSeatElement.dataset.index = seatEl;
 			sectorLineElement.appendChild(sectorSeatElement);
-
 		}
 	}
 }
@@ -36,4 +35,4 @@ arenaElement.addEventListener('click', (event) => {
 	let sectorSelected = target.closest('.sector').dataset.index;
 
 	boardChildElement.textContent = `S ${sectorSelected} - L ${lineSelected} - S ${seatSelected}`;
-});
+})
