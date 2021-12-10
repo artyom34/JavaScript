@@ -1,38 +1,66 @@
-const arenaElement = document.querySelector('.arena');
-const boardChildElement = document.querySelector('.board__selected-seat');
+const generateNumberRange = (from, to) => {
+	const result = [];
 
-for(let secEl = 1; secEl <= 3; secEl++){
-	let sectorElement = document.createElement('div');
-	sectorElement.classList.add('sector');
-	sectorElement.dataset.index = secEl;
-	arenaElement.appendChild(sectorElement);
-
-	for(lineEl = 1; lineEl <= 10; lineEl++){
-		const sectorLineElement = document.createElement('div');
-		sectorLineElement.classList.add('sector__line');
-		sectorLineElement.dataset.index = lineEl;
-		sectorElement.appendChild(sectorLineElement);
-
-
-		for(seatEl = 1; seatEl <= 10; seatEl++){
-			const sectorSeatElement = document.createElement('div');
-			sectorSeatElement.classList.add('sector__seat');
-			sectorSeatElement.dataset.index = seatEl;
-			sectorLineElement.appendChild(sectorSeatElement);
-		}
+	for(let i = from; i <= to; i++){
+		result.push(i);
 	}
+
+	return result;
+}
+const getLineSeat = () => {
+
+
+	return	generateNumberRange(1, 10).map(seatNumber => `
+		<div
+			class="sector__seat"
+			data-seat-number="${seatNumber}"
+			></div>
+	`).join('');
 }
 
-arenaElement.addEventListener('click', (event) => {
-	let target = event.target;
+const getSectorLines = () => {
+	const seatsString = getLineSeat();
 
-	if(!target){
+	return generateNumberRange(1, 10).map(lineNumber => `
+	<div
+		class="sector__line"
+		data-line-number="${lineNumber}"
+		>${seatsString}</div>
+`).join('');
+}
+
+const arenaElem = document.querySelector('.arena');
+
+
+const renderArena = () => {
+
+const linesString = getSectorLines();
+
+	const sectorString = generateNumberRange(1, 3).map(sectorNumber => `
+		<div
+			class="sector"
+			data-sector-number="${sectorNumber}"
+			>${linesString}</div>
+	`).join('');
+
+	arenaElem.innerHTML = sectorString;
+}
+
+const onSeatSelect = event =>{
+	const isSeat = event.target.classList.contains('sector__seat');
+
+	if(!isSeat) {
 		return;
 	}
 
-	let seatSelected = target.dataset.index;
-	let lineSelected = target.closest('.sector__line').dataset.index;
-	let sectorSelected = target.closest('.sector').dataset.index;
+	const seatNumber = event.target.dataset.seatNumber;
+	const lineNumber = event.target.closest('.sector__line').dataset.lineNumber;
+	const sectorNumber = event.target.closest('.sector').dataset.sectorNumber;
 
-	boardChildElement.textContent = `S ${sectorSelected} - L ${lineSelected} - S ${seatSelected}`;
-})
+	const selectedSeatElem = document.querySelector('.board__selected-seat');
+	selectedSeatElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
+}
+
+arenaElem.addEventListener('click', onSeatSelect);
+
+renderArena();
