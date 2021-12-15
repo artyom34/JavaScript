@@ -64,8 +64,8 @@ const addNewTodo = () =>{
 const isChecked = event => {
 	const dataId =	event.target.dataset.id;
 	return tasks.find(({done, id}) => {
-			let isTrue = id == dataId;
-			done = isTrue;
+			if(id == dataId)
+			done = true;
 	});
 };
 
