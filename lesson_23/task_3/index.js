@@ -49,7 +49,7 @@ function addTaskId(objTask){
 const addNewTodo = () =>{
 	const textTodo = document.querySelector('.task-input');
 	if(textTodo.value == '') { 
-		return 
+		return ;
 	};
 
 	listElem.innerHTML = '';
@@ -63,7 +63,7 @@ const addNewTodo = () =>{
 
 const isChecked = event => {
 	const dataId =	event.target.dataset.id;
-	tasks.find(({done, id}) => {
+	return tasks.find(({done, id}) => {
 			let isTrue = id == dataId;
 			done = isTrue;
 	});
