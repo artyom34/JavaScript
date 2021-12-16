@@ -61,7 +61,6 @@ const isChecked = event => {
 		tasks[elem].done = true;
 	}
 	
-	listElem.innerHTML = '';
 	renderTasks(tasks);
 };
 
