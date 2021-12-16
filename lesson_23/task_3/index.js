@@ -43,10 +43,11 @@ const addNewTodo = () =>{
 	}
 
 	listElem.innerHTML = '';
-	tasks.unshift({text: textTodo.value, done: false});
+	tasks.unshift({id: 0, text: textTodo.value, done: false});
 	textTodo.value = '';
 
 	renderTasks(tasks);	
+	console.log(tasks);
 };
 
 const isChecked = event => {
@@ -56,11 +57,13 @@ const isChecked = event => {
 	if(!isCheckbox){
 		return;
 	};
+
 	for(let elem = 0; elem < tasks.length; elem++){
 		if(tasks[elem].id == dataId)
 		tasks[elem].done = true;
 	}
 	
+	listElem.innerHTML = '';
 	renderTasks(tasks);
 };
 
