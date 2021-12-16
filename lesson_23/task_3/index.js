@@ -1,9 +1,9 @@
 let tasks = [
-  { text: 'Buy milk', done: false },
-  { text: 'Pick up Tom from airport', done: false },
-  { text: 'Visit party', done: false },
-  { text: 'Visit doctor', done: true },
-  { text: 'Buy meat', done: true },
+  {id: 1, text: 'Buy milk', done: false },
+  {id: 2, text: 'Pick up Tom from airport', done: false },
+  {id: 3, text: 'Visit party', done: false },
+  {id: 4, text: 'Visit doctor', done: true },
+  {id: 5, text: 'Buy meat', done: true },
 ];
 
 
@@ -13,7 +13,7 @@ const renderTasks = (tasksList) => {
 
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done, id }) => {
+    .map(({id, text, done }) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
@@ -32,48 +32,44 @@ const renderTasks = (tasksList) => {
   listElem.append(...tasksElems);
 };
 
-addTaskId(tasks);
 renderTasks(tasks);
 // put your code here
 
-function addTaskId(objTask){
-	let taskId = 1;
-
-	for(let elem = 0; elem < objTask.length; elem++){
-		objTask[elem].id = taskId;
-		taskId++;
-	}
-	return objTask;
-};
 
 const addNewTodo = () =>{
 	const textTodo = document.querySelector('.task-input');
 	if(textTodo.value == '') { 
 		return ;
-	};
+	}
 
 	listElem.innerHTML = '';
 	tasks.unshift({text: textTodo.value, done: false});
 	textTodo.value = '';
 
-	addTaskId(tasks);
 	renderTasks(tasks);	
 };
 
-
 const isChecked = event => {
-	const dataId =	event.target.dataset.id;
-	return tasks.find(({done, id}) => {
-			if(id == dataId)
-			done = true;
-	});
+	const dataId = +event.target.dataset.id;
+	const isCheckbox = event.target.classList.contains('list__item-checkbox');
+
+	if(!isCheckbox){
+		return;
+	};
+	for(let elem = 0; elem < tasks.length; elem++){
+		if(tasks[elem].id == dataId)
+		tasks[elem].done = true;
+	}
+	
+	listElem.innerHTML = '';
+	renderTasks(tasks);
 };
 
 const createTaskBtn = document.querySelector('.create-task-btn');
 createTaskBtn.addEventListener('click', addNewTodo);
 
-const changeCheckbox = document.querySelectorAll('.list__item-checkbox');
-listElem.addEventListener('change', isChecked);
+
+listElem.addEventListener('click', isChecked);
 
 
 
