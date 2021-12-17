@@ -43,7 +43,7 @@ const addNewTodo = () =>{
 	}
 
 	listElem.innerHTML = '';
-	tasks.push({id: tasks.length - 1, text: textTodo.value, done: false});
+	tasks.push({id: tasks.length + 1, text: textTodo.value, done: false});
 	textTodo.value = '';
 
 	renderTasks(tasks);	
@@ -58,15 +58,11 @@ const isChecked = event => {
 		return;
 	};
 
-	// for(let elem = 0; elem < tasks.length; elem++){
-	// 	if(tasks[elem].id == dataId)
-	// 	tasks[elem].done = true;
-	// }
 	tasks.map(elem => {
 		if(elem.id == dataId){
 			elem.done = true;
 		}
-	})
+	});
 
 	listElem.innerHTML = '';
 	renderTasks(tasks);
