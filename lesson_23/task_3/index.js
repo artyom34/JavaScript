@@ -43,7 +43,7 @@ const addNewTodo = () =>{
 	}
 
 	listElem.innerHTML = '';
-	tasks.push({text: textTodo.value, done: false});
+	tasks.push({id: tasks.length - 1, text: textTodo.value, done: false});
 	textTodo.value = '';
 
 	renderTasks(tasks);	
@@ -63,7 +63,7 @@ const isChecked = event => {
 		tasks[elem].done = true;
 	}
 
-
+	listElem.innerHTML = '';
 	renderTasks(tasks);
 };
 
