@@ -43,7 +43,7 @@ const addNewTodo = () =>{
 	}
 
 	listElem.innerHTML = '';
-	tasks.unshift({id: 0, text: textTodo.value, done: false});
+	tasks.push({text: textTodo.value, done: false});
 	textTodo.value = '';
 
 	renderTasks(tasks);	
@@ -62,8 +62,8 @@ const isChecked = event => {
 		if(tasks[elem].id == dataId)
 		tasks[elem].done = true;
 	}
-	
-	listElem.innerHTML = '';
+
+
 	renderTasks(tasks);
 };
 
