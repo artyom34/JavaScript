@@ -58,10 +58,15 @@ const isChecked = event => {
 		return;
 	};
 
-	for(let elem = 0; elem < tasks.length; elem++){
-		if(tasks[elem].id == dataId)
-		tasks[elem].done = true;
-	}
+	// for(let elem = 0; elem < tasks.length; elem++){
+	// 	if(tasks[elem].id == dataId)
+	// 	tasks[elem].done = true;
+	// }
+	tasks.map(elem => {
+		if(elem.id == dataId){
+			elem.done = true;
+		}
+	})
 
 	listElem.innerHTML = '';
 	renderTasks(tasks);
