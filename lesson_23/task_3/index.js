@@ -71,7 +71,7 @@ const isChecked = event => {
 const createTaskBtn = document.querySelector('.create-task-btn');
 createTaskBtn.addEventListener('click', addNewTodo);
 
-listElem.addEventListener('change', isChecked);
+listElem.addEventListener('click', isChecked);
 
 
 
