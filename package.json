@@ -1,24 +1,24 @@
 {
-"name": "JavaScript",
-"version": "1.0.0",
-"description": "",
-"main": "index.js",
-"scripts": {
-"test": "echo \"Error: no test specified\" && exit 1"
-},
-"repository": {
-"type": "git",
-"url": "git+https://github.com/artyom34/JavaScript.git"
-},
-"keywords": [],
-"author": "",
-"license": "ISC",
-"bugs": {
-"url": "https://github.com/artyom34/JavaScript/issues"
-},
-"homepage": "https://github.com/artyom34/JavaScript#readme",
-"dependencies": {
-"@babel/core": "^7.15.8",
-"@babel/preset-env": "^7.15.8"
-}
+  "name": "JavaScript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artyom34/JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artyom34/JavaScript/issues"
+  },
+  "homepage": "https://github.com/artyom34/JavaScript#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8"
+  }
 }

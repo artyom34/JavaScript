@@ -47,7 +47,6 @@ const addNewTodo = () =>{
 	textTodo.value = '';
 
 	renderTasks(tasks);	
-	console.log(tasks);
 };
 
 const isChecked = event => {
@@ -58,14 +57,19 @@ const isChecked = event => {
 		return;
 	};
 
-	tasks.map(elem => {
+	tasks.map((elem) => {
 		if(elem.id == dataId){
-			elem.done = true;
+			if(elem.done == true){
+				elem.done = false;
+			}else{
+				elem.done = true;
+			}
 		}
 	});
 
 	listElem.innerHTML = '';
 	renderTasks(tasks);
+	console.log(tasks);
 };
 
 const createTaskBtn = document.querySelector('.create-task-btn');
